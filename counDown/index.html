@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+       #container{
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 200px 500px;
+        height: 150px;
+        width: 250px;
+        padding: 20px;
+        border-radius: 20px;
+        background: linear-gradient(to top, pink, blue);
+
+    }
+    
+    
+    #timer{
+           font-size: xx-large;
+
+        }
+
+    </style>
+</head>
+<body>
+    
+     <div id="container">   <p id="timer" ></p></div>
+ 
+
+
+<script>
+
+
+// "nov 15, 2022 14: 00: 00"
+var x = setInterval(function(){
+var endSale = new Date("nov 26, 2022 10:00:00").getTime();
+var currentdate = new Date().getTime();
+var gap = endSale - currentdate ;
+
+
+    
+    var days = Math.floor( gap /(1000*60*60*24));
+    console.log(days);
+    var hours = Math.floor( (gap %(1000*60*60*24))/(1000*60*60));
+console.log(hours);
+var min = Math.floor( (gap %(1000*60*60))/(1000*60));
+console.log(min);
+var sec = Math.floor( (gap %(1000*60))/1000);
+console.log(sec);
+
+
+document.getElementById('timer').innerHTML = days +"d, " + hours +"h:" + min + "m:" + sec +"s";
+
+}, 1000);
+
+</script>
+
+
+</body>
+</html>
